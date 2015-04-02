@@ -43,6 +43,7 @@
 #ifndef ABS_MT_POSITION_X
 # define ABS_MT_POSITION_X       0x35    /* Center X ellipse position */
 # define ABS_MT_POSITION_Y       0x36    /* Center Y ellipse position */
+# define ABS_MT_PRESSURE 0x3a /* Pressure on contact area */
 #endif
 
 #include "tslib-private.h"
@@ -203,6 +204,7 @@ static int ts_input_read(struct tslib_module_info *inf,
 				case ABS_MT_POSITION_Y:
 					i->current_y = ev.value;
 					break;
+				case ABS_MT_PRESSURE:
 				case ABS_PRESSURE:
 					i->current_p = ev.value;
 					break;
